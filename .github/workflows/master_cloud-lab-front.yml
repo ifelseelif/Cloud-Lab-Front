@@ -33,4 +33,4 @@ jobs:
           app-name: 'Cloud-Lab-Front'
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_4D9BE6123FC94322896FF016A3BEA855 }}
-          package: ./dist/Cloud-Lab-Front
+          package: ./dist/hello-world-app
