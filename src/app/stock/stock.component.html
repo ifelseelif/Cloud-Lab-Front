@@ -1,0 +1,27 @@
+<table class="table">
+    <thead>
+        <tr>
+            <th >Id</th>
+            <th >Figi</th>
+            <th >Name</th>
+            <th >Country</th>
+            <th >currency</th>
+            <th >price</th>
+            <th >sector</th>
+            <th >ticker</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let stock of stocks">
+            <th >{{ stock.id }}</th>
+            <th >{{ stock.figi }}</th>
+            <th>{{ stock.name }}</th>
+            <th>{{ stock.countryOfRiskName }}</th>
+            <th>{{ stock.currency }}</th>
+            <th>{{ stock.price }}</th>
+            <th>{{ stock.sector }}</th>
+            <th>{{ stock.ticker }}</th>
+
+        </tr>
+    </tbody>
+</table>

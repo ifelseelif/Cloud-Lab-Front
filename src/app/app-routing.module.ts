@@ -3,14 +3,14 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
-import { HomeComponent } from './home/home.component';
-import { ProfileComponent } from './profile/profile.component';
+import { StockComponent } from './stock/stock.component';
+import { PortfolioComponent } from './portfolio/portfolio.component';
 
 const routes: Routes = [
-  { path: 'home', component: HomeComponent },
+  { path: 'stocks', component: StockComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
-  { path: 'profile', component: ProfileComponent },
+  { path: 'portfolio', component: PortfolioComponent },
   { path: '', redirectTo: 'home', pathMatch: 'full' }
 ];
 

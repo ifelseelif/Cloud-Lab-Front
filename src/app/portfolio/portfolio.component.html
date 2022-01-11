@@ -1,0 +1,96 @@
+<div class="mt-5">
+
+    <ul *ngFor="let portfolio of portfolios" class="list-group">
+        <li (click)="choosePortfolio(portfolio)" class="list-group-item btn btn-primary m-2"
+            href="#collapseExample">{{ portfolio }}</li>
+    </ul>
+    <button class="ml-2 btn btn-primary" type="button" aria-expanded="false" (click)="createPortfolio()">
+        Create portfolio
+    </button>
+    <div  id="collapseExample">
+        <div class="card card-body m-2 p-5">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Figi</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Country</th>
+                        <th scope="col">currency</th>
+                        <th scope="col">price</th>
+                        <th scope="col">sector</th>
+                        <th scope="col">ticker</th>
+                        <th scope="col">count</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let stock of portfoliosStocks">
+                        <th>{{ stock.figi }}</th>
+                        <th>{{ stock.name }}</th>
+                        <th>{{ stock.countryOfRiskName }}</th>
+                        <th>{{ stock.currency }}</th>
+                        <th>{{ stock.price }}</th>
+                        <th>{{ stock.sector }}</th>
+                        <th>{{ stock.ticker }}</th>
+                        <th>{{ stock.count }}</th>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="row">
+                <div class="col">
+                    <input #stockId="ngModel" minlength="36" maxlength="36" type="text" class="form-control"
+                        name="stock Id" [(ngModel)]="form.stockId" required placeholder="stock Id">
+                </div>
+                <div class="col">
+                    <input #count="ngModel" type="number" type="text" class="form-control" name="count"
+                        [(ngModel)]="form.count" required placeholder="count">
+                </div>
+                <div class="col">
+                    <button class="ml-2 btn btn-primary" type="button" aria-expanded="false" (click)="addStock()">
+                        Add stock
+                    </button>
+                </div>
+                <div class="col">
+                    <button class="ml-2 btn btn-primary"
+                        (click)="updateRecommendation()" data-toggle="collapse" href="#collapseExample1"
+                        aria-expanded="false" aria-controls="collapseExample1">
+                        Try to balance
+                    </button>
+                </div>
+            </div>
+
+            <div>
+                <div class="collapse1" id="collapseExample1">
+                    <div class="card card-body m-2 p-5">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Figi</th>
+                                    <th scope="col">Name</th>
+                                    <th scope="col">Country</th>
+                                    <th scope="col">currency</th>
+                                    <th scope="col">price</th>
+                                    <th scope="col">sector</th>
+                                    <th scope="col">ticker</th>
+                                    <th scope="col">Count need to buy </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let stock of stocksRecommended">
+                                    <th>{{ stock.figi }}</th>
+                                    <th>{{ stock.name }}</th>
+                                    <th>{{ stock.countryOfRiskName }}</th>
+                                    <th>{{ stock.currency }}</th>
+                                    <th>{{ stock.price }}</th>
+                                    <th>{{ stock.sector }}</th>
+                                    <th>{{ stock.ticker }}</th>
+                                    <th>{{ stock.count }}</th>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
